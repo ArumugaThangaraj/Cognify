@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <nav>
+        <nav class="nav">
             <div class="logo">
                 <img src="./Logo.png" alt="" width="100%">
             </div>
@@ -19,8 +19,10 @@
                 <li><a href="">About</a></li>
                 <li><a href="">Courses</a></li>
                 <li><a href="">Contact</a></li>
+                <button id="theme">☀️</button>
             </ul>
-            <button><img src="./menu.png" alt="Menu button" width="35px"></button>
+            <button class="mobile-menu">
+                <img src="./menu.png" alt="Menu button" width="35px"></button>
         </nav>
     </header>
     <div class="head">
@@ -34,8 +36,43 @@
             <img src="./educate.png" alt="Educational Photo" width="400px">
         </div>
 
-
     </div>
+    <script>
+      const body = document.body;
+      let theme = document.getElementById("theme");
+      let nightmode = false;
+      theme.addEventListener("click",() => {
+        if (nightmode){
+            body.style.color = "white";
+            body.style.backgroundColor = "black"
+            let anchor = document.querySelectorAll("ul li a");
+            let nav = document.querySelector(".nav")
+            anchor.forEach(anchor => {
+                anchor.style.color = "white";
+                nav.style.backgroundColor = "black";
+                
+            });
+            nightmode.textContent = "🌙";
+            nightmode = false;
+        }
+        else{
+            body.style.color = "black";
+            body.style.backgroundColor = "white"
+            let anchor = document.querySelectorAll("ul li a");
+            let nav = document.querySelector(".nav")
+            anchor.forEach(anchor => {
+                anchor.style.color = "black";
+                nav.style.backgroundColor = "white";
+                
+            });
+            nightmode.textContent = "☀️";
+            nightmode = true;
+        }
+        
+      });
+
+
+    </script>
 </body>
 
 </html>
