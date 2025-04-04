@@ -14,15 +14,16 @@
             <div class="logo">
                 <img src="./Logo.png" alt="" width="100%">
             </div>
-            <ul>
+            <ul class="m-box">
                 <li><a href="">Home</a></li>
                 <li><a href="">About</a></li>
                 <li><a href="">Courses</a></li>
                 <li><a href="">Contact</a></li>
                 <button id="theme">☀️</button>
             </ul>
-            <button class="mobile-menu">
-                <img src="./menu.png" alt="Menu button" width="35px"></button>
+            <button class="mobile-menu" onclick="toggle()">
+                <img src="./menu.png" alt="Menu button" width="35px">
+            </button>
         </nav>
     </header>
     <div class="head">
@@ -37,39 +38,51 @@
         </div>
 
     </div>
+    <div id="data-container"></div>
     <script>
-      const body = document.body;
-      let theme = document.getElementById("theme");
-      let nightmode = false;
-      theme.addEventListener("click",() => {
-        if (nightmode){
-            body.style.color = "white";
-            body.style.backgroundColor = "black"
-            let anchor = document.querySelectorAll("ul li a");
-            let nav = document.querySelector(".nav")
-            anchor.forEach(anchor => {
-                anchor.style.color = "white";
-                nav.style.backgroundColor = "black";
-                
-            });
-            nightmode.textContent = "🌙";
-            nightmode = false;
+        const body = document.body;
+        let theme = document.getElementById("theme");
+        let nightmode = false;
+        theme.addEventListener("click", () => {
+            if (nightmode) {
+                body.style.color = "white";
+                body.style.backgroundColor = "black"
+                let anchor = document.querySelectorAll("ul li a");
+                let nav = document.querySelector(".nav")
+                anchor.forEach(anchor => {
+                    anchor.style.color = "white";
+                    nav.style.backgroundColor = "black";
+
+                });
+                theme.textContent = "🌙";
+                nightmode = false;
+            }
+            else {
+                body.style.color = "black";
+                body.style.backgroundColor = "white"
+                let anchor = document.querySelectorAll("ul li a");
+                let nav = document.querySelector(".nav")
+                anchor.forEach(anchor => {
+                    anchor.style.color = "black";
+                    nav.style.backgroundColor = "white";
+
+                });
+                nightmode = true;
+                theme.textContent = "☀️";
+            }
+
+        });
+        let mobileMenu = document.querySelector(".mobile-menu");
+        let Box = document.querySelector(".m-box");
+        let nav = document.querySelector(".nav")
+
+        function toggle() {
+            if (Box.style.display === "block") {
+                Box.style.display = "none";
+            } else {
+                Box.style.display = "block";
+            }
         }
-        else{
-            body.style.color = "black";
-            body.style.backgroundColor = "white"
-            let anchor = document.querySelectorAll("ul li a");
-            let nav = document.querySelector(".nav")
-            anchor.forEach(anchor => {
-                anchor.style.color = "black";
-                nav.style.backgroundColor = "white";
-                
-            });
-            nightmode.textContent = "☀️";
-            nightmode = true;
-        }
-        
-      });
 
 
     </script>
