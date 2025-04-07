@@ -1,4 +1,4 @@
-* {
+/* * {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
@@ -89,7 +89,7 @@ p {
     color: #666;
   }
 /* tab view */
-@media (max-width:768px) {
+/* @media (max-width:768px) {
     .head-content{
         margin: 20px 40px;
 
@@ -110,7 +110,7 @@ p {
 }
 
 /* Mobile View */
-@media (max-width:568px) {
+/* @media (max-width:568px) {
     .head-content{
         margin: 10px 20px;
     }
@@ -152,4 +152,6 @@ p {
     #theme{
       display: none;
     }
-}
+} */ 
+
+
